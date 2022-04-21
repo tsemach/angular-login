@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { config } from '../helpers/config'
 
 import { User } from '../models'
 
@@ -12,7 +13,7 @@ export class UserService {
   }
 
   register(user: User) {
-    return this.http.post(`http://localhost:4201/users/register`, user);
+    return this.http.post(`${config.apiUrl}/users/register`, user);
   }
 
   delete(id: number) {
